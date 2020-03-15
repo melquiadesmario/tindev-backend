@@ -1,10 +1,9 @@
 const express = require('express')
-const server = express()
+const routes = require('./routes')
 
 const port = 3333
+const server = express()
 
-server.get('/', (req, res) => {
-    return res.send(`Hello ${ req.query.name }`)
-})
+server.use(routes)
 
-server.listen(port, () => console.log(`Server is Running on Port ${ port }`))
+server.listen(port, () => console.log(`Server on Port ${ port }`))
