@@ -1,12 +1,8 @@
 const express = require('express')
 const routes = express.Router()
 
-routes.get('/', (req, res) => {
-    return res.json({ message: `Hello Dev ${ req.query.name }` })
-})
+const DevController = require('./controllers/DevController')
 
-routes.post('/devs', (req, res) => {
-    return res.json(req.body)
-})
+routes.post('/devs', DevController.store)
 
 module.exports = routes

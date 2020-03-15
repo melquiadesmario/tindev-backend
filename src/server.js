@@ -13,7 +13,7 @@ mongoose
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
-    .then(() => console.log('Data_Base Connected'))
+    .then(() => console.log('DataBase is TRUE'))
     .catch((err) => console.log(err))
 
 server.use(express.json())
